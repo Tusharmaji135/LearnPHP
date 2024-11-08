@@ -43,4 +43,4 @@ Once I create a project based on this tutorial, I plan to:
 To begin working with the code, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/php-mysql-crud-tutorial.git
+https://github.com/Tusharmaji135/LearnPHP.git
