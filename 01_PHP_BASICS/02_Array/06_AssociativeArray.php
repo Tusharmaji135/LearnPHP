@@ -14,5 +14,4 @@ echo "<pre>";
 var_dump($age);
 print_r($age);
 echo "</pre>";
-
 ?>
