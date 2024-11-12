@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>JQuery</h1>
+    <div class="first">
+      <h2>Tushar</h2>
+      <p>hello world</p>
+    </div>
+    <div id="second">
+      <h2>Honey</h2>
+      <p>hello Bro</p>
+    </div>
+    <div class="list">
+      <ul>
+        <li>banana</li>
+        <li>apple</li>
+        <li>mango</li>
+        <li>berry</li>
+        <li>cherry</li>
+      </ul>
+    </div>
+
+    <script>
+      $(function () {
+        // let a = $('*').html();
+        // console.log(a)
+        $('ul li:eq(2)').css('border','2px solid red') //index wise
+        // $('ul li:lt(2)').css('border','2px solid green') //lower then
+        // $('ul li:gt(2)').css('border','2px solid green') //greater  then
+        $('li:first').css('color','pink')
+        $('li:last').css('color','black')
+        $('#second').css('color','green')
+      });
+    </script>
+  </body>
+</html>

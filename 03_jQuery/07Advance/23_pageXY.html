@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <title>Learn jquery</title>
+    <style>
+      body {
+        font-family: arial;
+      }
+      h1 {
+        font-size: 25px;
+      }
+      #result {
+        border: 1px solid #6c5ce7;
+        background: #a29bfe;
+        width: 400px;
+        height: 400px;
+      }
+      #box {
+        border: 1px solid #e15f41;
+        background: #e77f67;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery pageX & pageY Property</h1>
+    <h2></h2>
+		<a id="a1" href="http://www.google.com">abnormal</a>
+		<a id="a2" href="http://www.google.com">normal</a>
+    <div id="result"></div>
+    <div
+      style="width: 50px; height: 50px; border: 2px solid black"
+      id="box1"
+    ></div>
+		<input type="text" name="in" id="in">
+
+    <div id="box"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      /* jQuery pageX & pageY Method*/
+      $(document).ready(function () {
+        $(document).mousemove(function (event) {
+          //$("#result").text(event.pageX)
+
+          $("#result").text("X: " + event.pageX + " Y: " + event.pageY);
+
+          var x = event.pageX;
+          var y = event.pageY;
+
+          // $("#box").offset({top:y,left:x});
+        });
+        $("#box1").on("click dblclick mouseover mouseout mousedown", (event) => {
+          $("h2").html("Event: " + event.type  + ": " + event.which);
+        });
+				// $('#in').on('keydown',(e)=>{
+					
+				// 	$("h2").html("Event: " + e.type  + ": " + e.which);
+				// })
+				// $('*').on('click',(e)=>{
+					
+				// 	$("h2").html("Event: " + e.type  + ": " + e.which + ": " + e.target.nodeName);
+				// })
+				$("#a1").on('click',(e)=>{
+          
+          e.preventDefault();
+					let a = e.isDefaultPrevented();
+					$("h2").html("Event: " + e.type  + ": " + a);
+        })
+       
+
+      });
+    </script>
+  </body>
+</html>

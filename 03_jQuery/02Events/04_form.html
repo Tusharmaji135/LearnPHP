@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Practice Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+        <span class="error" id="nameError">Name is required</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" />
+        <span class="error" id="emailError">Enter a valid email</span>
+      </div>
+
+      <div class="form-group">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" /> Male
+        <input type="radio" name="gender" value="Female" /> Female
+        <span class="error" id="genderError">Select a gender</span>
+      </div>
+
+      <div class="form-group">
+        <label>Skills:</label>
+        <input type="checkbox" name="skills" value="HTML" /> HTML
+        <input type="checkbox" name="skills" value="CSS" /> CSS
+        <input type="checkbox" name="skills" value="JavaScript" /> JavaScript
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Select a country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+        </select>
+        <span class="error" id="countryError">Select a country</span>
+      </div>
+
+      <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+
+        $('#name,#email,#country').focus(function(){
+          $(this).css('background-color', 'lightyellow');
+        })
+
+        $('#name,#email,#country').blur(function(){
+          $(this).css('background-color', '');
+        })
+        $('#name,#email').select(function(){
+          $(this).css('background-color', 'green');
+        })
+        
+        $('#country').change(function(){
+          $(this).css('background-color', 'pink');
+        })
+
+        $('#registrationForm').submit(function(){
+          console.log('form submited')
+        })
+        // $('#email').focus(()=>{
+        //   $('#email').css('background-color', 'lightyellow');
+        // })
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // Validate form on submit
+        // $("#submitButton").click(function () {
+        //   let isValid = true;
+
+        //   // Name validation
+        //   if ($("#name").val().trim() === "") {
+        //     $("#nameError").show();
+        //     isValid = false;
+        //   } else {
+        //     $("#nameError").hide();
+        //   }
+
+        //   // Email validation
+        //   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //   if (!emailPattern.test($("#email").val())) {
+        //     $("#emailError").show();
+        //     isValid = false;
+        //   } else {
+        //     $("#emailError").hide();
+        //   }
+
+        //   // Gender validation
+        //   if ($("input[name='gender']:checked").length === 0) {
+        //     $("#genderError").show();
+        //     isValid = false;
+        //   } else {
+        //     $("#genderError").hide();
+        //   }
+
+        //   // Country validation
+        //   if ($("#country").val() === "") {
+        //     $("#countryError").show();
+        //     isValid = false;
+        //   } else {
+        //     $("#countryError").hide();
+        //   }
+
+        //   // Form submission message
+        //   if (isValid) {
+        //     alert("Form submitted successfully!");
+        //   }
+        // });
+
+        // // Add interactivity
+        // $("#name")
+        //   .focus(function () {
+        //     $(this).css("background-color", "lightyellow");
+        //   })
+        //   .blur(function () {
+        //     $(this).css("background-color", "");
+        //   });
+
+        // $("input[name='skills']").change(function () {
+        //   $(this).next().toggleClass("selected-skill");
+        // });
+      });
+    </script>
+  </body>
+</html>
